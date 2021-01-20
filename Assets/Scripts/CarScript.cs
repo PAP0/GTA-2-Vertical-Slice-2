@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PMovement : MonoBehaviour
+public class CarScript : MonoBehaviour
 {
     public float speed;
     public float turnspeed;
@@ -15,13 +15,13 @@ public class PMovement : MonoBehaviour
     void Start()
     {
         rbody = GetComponent<Rigidbody>();
-        playerTransform = GameObject.Find("Player").transform;
+        playerTransform = GameObject.Find("Car").transform;
     }
 
     void Update()
     {
-        Rotate();
-        Walk();
+        Turn();
+        Drive();
     }
     // Update is called once per frame
     void FixedUpdate()
@@ -32,22 +32,22 @@ public class PMovement : MonoBehaviour
 
     }
 
-    void Walk()
+    void Drive()
     {
         if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
         {
-            transform.position += transform.forward * Time.deltaTime * speed;
-            //rbody.velocity = playerTransform.forward * speed * Time.deltaTime;
+            //transform.position += transform.forward * Time.deltaTime * speed;
+            rbody.velocity = playerTransform.forward * speed * Time.deltaTime;
         }
         if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
         {
 
-            transform.position += transform.forward * Time.deltaTime * -speed;
-            //rbody.velocity = playerTransform.forward * -speed;
+            //transform.position += transform.forward * Time.deltaTime * -speed;
+            rbody.velocity = playerTransform.forward * -speed;
         }
     }
 
-    void Rotate()
+    void Turn()
     {
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
@@ -60,3 +60,4 @@ public class PMovement : MonoBehaviour
         }
     }
 }
+
