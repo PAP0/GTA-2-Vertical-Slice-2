@@ -49,14 +49,17 @@ public class CarScript : MonoBehaviour
 
     void Turn()
     {
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
         {
-            transform.Rotate(0, -1, 0 * turnspeed * Time.deltaTime);
-        }
+            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+            {
+                transform.Rotate(0, -1, 0 * turnspeed * Time.deltaTime);
+            }
 
-        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
-        {
-            transform.Rotate(0, 1, 0 * turnspeed * Time.deltaTime);
+            if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+            {
+                transform.Rotate(0, 1, 0 * turnspeed * Time.deltaTime);
+            }
         }
     }
 }
