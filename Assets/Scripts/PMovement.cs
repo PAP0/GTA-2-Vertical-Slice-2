@@ -9,6 +9,7 @@ public class PMovement : MonoBehaviour
     Rigidbody rbody;
 
     private Transform playerTransform;
+    private Vector3 relative;
 
 
     // Use this for initialization
@@ -36,14 +37,11 @@ public class PMovement : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
         {
-            transform.position += transform.forward * Time.deltaTime * speed;
-            //rbody.velocity = playerTransform.forward * speed * Time.deltaTime;
+            rbody.velocity = playerTransform.forward * speed * Time.deltaTime;
         }
         if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
         {
-
-            transform.position += transform.forward * Time.deltaTime * -speed;
-            //rbody.velocity = playerTransform.forward * -speed;
+            rbody.velocity = playerTransform.forward * -speed * Time.deltaTime;
         }
     }
 

@@ -16,7 +16,7 @@ public class CScript : MonoBehaviour
     void FixedUpdate()
     {
         Vector3 desiredPosition = _playerPosition.position + offset;
-        Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, 10.0f * Time.deltaTime);
+        Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, 2.0f * Time.deltaTime);
 
         transform.position = smoothedPosition;
 
