@@ -25,11 +25,12 @@ public class PMovement : MonoBehaviour
     {
         Rotate();
         Walk();
+        Vector3 playerPos = playerTransform.eulerAngles;
     }
     // Update is called once per frame
     void FixedUpdate()
     {
-        Vector3 playerPos = playerTransform.eulerAngles;
+
     }
 
     void Walk()
