@@ -508,7 +508,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9454e4044a300d5419fe71b95d6b785a, type: 2}
+  - {fileID: 2100000, guid: 0727583fec2c1a64ba06d561e513ae5d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -581,7 +581,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c24735227be5df44982b0b006f15d749, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 900
+  speed: 20
   turnspeed: 100
 --- !u!114 &788108872
 MonoBehaviour:
@@ -985,6 +985,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerPosition: {fileID: 788108869}
   offset: {x: 0, y: 21.791, z: 0}
+  distanceFromPlayer: 30
 --- !u!1 &1381761510
 GameObject:
   m_ObjectHideFlags: 0
