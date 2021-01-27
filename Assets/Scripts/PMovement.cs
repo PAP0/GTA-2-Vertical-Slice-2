@@ -11,6 +11,8 @@ public class PMovement : MonoBehaviour
     private Transform playerTransform;
     private Vector3 relative;
 
+    public Animator anim;
+
 
     // Use this for initialization
     void Start()
@@ -27,21 +29,33 @@ public class PMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-
         Vector3 playerPos = playerTransform.eulerAngles;
-
-
     }
 
     void Walk()
     {
-        if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W) == true)
         {
             rbody.velocity = playerTransform.forward * speed * Time.deltaTime;
+            anim.SetBool("isWalking", true);
+            anim.SetBool("isIdle", false);
         }
-        if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
+        else
+        {
+            anim.SetBool("isWalking", false);
+            anim.SetBool("isIdle", true);
+        }
+
+        if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S) == true)
         {
             rbody.velocity = playerTransform.forward * -speed * Time.deltaTime;
+            anim.SetBool("isWalking", true);
+            anim.SetBool("isIdle", false);
+        }
+        else
+        {
+            anim.SetBool("isWalking", false);
+            anim.SetBool("isIdle", true);
         }
     }
 
@@ -49,12 +63,12 @@ public class PMovement : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
-            transform.Rotate(0, -1, 0 * turnspeed * Time.deltaTime);
+            transform.Rotate(0, -7, 0 * turnspeed * Time.deltaTime);
         }
 
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
-            transform.Rotate(0, 1, 0 * turnspeed * Time.deltaTime);
+            transform.Rotate(0, 7, 0 * turnspeed * Time.deltaTime);
         }
     }
 }
