@@ -11,12 +11,13 @@ public class CScript : MonoBehaviour
 
     private float startFOV = 60f;
     private float maxFOV = 60f;
+    public float distanceFromPlayer;
 
 
     void FixedUpdate()
     {
         Vector3 desiredPosition = _playerPosition.position + offset;
-        Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, 2.0f * Time.deltaTime);
+        Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, distanceFromPlayer * Time.deltaTime);
 
         transform.position = smoothedPosition;
 

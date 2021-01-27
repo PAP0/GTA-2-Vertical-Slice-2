@@ -6,10 +6,10 @@ public class CarScript : MonoBehaviour
 {
     public float speed;
     public float turnspeed;
+    public float turn;
     Rigidbody rbody;
 
     private Transform playerTransform;
-
 
     // Use this for initialization
     void Start()
@@ -26,10 +26,7 @@ public class CarScript : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-
         Vector3 playerPos = playerTransform.eulerAngles;
-
-
     }
 
     void Drive()
@@ -43,7 +40,7 @@ public class CarScript : MonoBehaviour
         {
 
             //transform.position += transform.forward * Time.deltaTime * -speed;
-            rbody.velocity = playerTransform.forward * -speed;
+            rbody.velocity = playerTransform.forward * -speed * Time.deltaTime;
         }
     }
 
@@ -53,12 +50,12 @@ public class CarScript : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
             {
-                transform.Rotate(0, -1, 0 * turnspeed * Time.deltaTime);
+                transform.Rotate(0, -turn, 0 * turnspeed * Time.deltaTime);
             }
 
             if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
             {
-                transform.Rotate(0, 1, 0 * turnspeed * Time.deltaTime);
+                transform.Rotate(0, turn, 0 * turnspeed * Time.deltaTime);
             }
         }
     }
