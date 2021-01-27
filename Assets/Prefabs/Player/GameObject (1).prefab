@@ -141,10 +141,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3494236358389677281}
-  - component: {fileID: 656881804074642271}
   - component: {fileID: 9213410904054383177}
   - component: {fileID: 7895501093637318935}
   - component: {fileID: 203051117770159859}
+  - component: {fileID: 4751246803109013164}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -168,20 +168,6 @@ Transform:
   m_Father: {fileID: 2414997326794279226}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: -272.005, z: 0}
---- !u!136 &656881804074642271
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4114864412438857287}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 6.8402424
-  m_Height: 13.680485
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.41917872, z: 0}
 --- !u!54 &9213410904054383177
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -192,7 +178,7 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -230,6 +216,19 @@ MonoBehaviour:
   bulletPrefab: {fileID: 3661463277025834019, guid: 13fb49bc6d39b2b4781d8903ae65dfa6, type: 3}
   bulletForce: 20
   anim: {fileID: 1677212140553236849}
+--- !u!65 &4751246803109013164
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4114864412438857287}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10.90754, y: 5.8819284, z: 8.391537}
+  m_Center: {x: 0.22258708, y: 0.10239943, z: 0.00880319}
 --- !u!1 &4692768686228047874
 GameObject:
   m_ObjectHideFlags: 0
