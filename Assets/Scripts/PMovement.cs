@@ -12,6 +12,7 @@ public class PMovement : MonoBehaviour
     private Vector3 relative;
 
     public Animator anim;
+    public GameObject varGameObject;
 
 
     // Use this for initialization
@@ -19,6 +20,7 @@ public class PMovement : MonoBehaviour
     {
         rbody = GetComponent<Rigidbody>();
         playerTransform = GameObject.Find("Player").transform;
+        varGameObject = GameObject.FindWithTag("Player");
     }
 
     void Update()

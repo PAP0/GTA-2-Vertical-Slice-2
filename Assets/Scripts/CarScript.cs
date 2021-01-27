@@ -10,18 +10,21 @@ public class CarScript : MonoBehaviour
     Rigidbody rbody;
 
     private Transform playerTransform;
+    public GameObject TheCar;
 
     // Use this for initialization
     void Start()
     {
         rbody = GetComponent<Rigidbody>();
         playerTransform = GameObject.Find("Car").transform;
+        TheCar = GameObject.FindWithTag("Car");
     }
 
     void Update()
     {
         Turn();
         Drive();
+        Switch();
     }
     // Update is called once per frame
     void FixedUpdate()
@@ -57,6 +60,14 @@ public class CarScript : MonoBehaviour
             {
                 transform.Rotate(0, turn, 0 * turnspeed * Time.deltaTime);
             }
+        }
+    }
+
+    void Switch()
+    {
+        if (Input.GetKey(KeyCode.F))
+        {
+            TheCar.GetComponent<CarScript>().enabled = false;
         }
     }
 }
