@@ -8,11 +8,18 @@ public class Shooting : MonoBehaviour
     public GameObject bulletPrefab;
 
     public float bulletForce = 20f;
+
+    public Animator anim;
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.LeftControl))
         {
             Shoot();
+            anim.SetBool("isWalking", true);
+        }
+        if (Input.GetKeyUp(KeyCode.LeftControl))
+        {
+            anim.SetBool("isWalking", false);
         }
     }
 

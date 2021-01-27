@@ -34,9 +34,9 @@ public class PMovement : MonoBehaviour
 
     void Walk()
     {
-        if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W) == true)
+        if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
         {
-            rbody.velocity = playerTransform.forward * speed * Time.deltaTime;
+            rbody.velocity = playerTransform.forward * -speed * Time.deltaTime;
             anim.SetBool("isWalking", true);
             anim.SetBool("isIdle", false);
         }
@@ -46,9 +46,9 @@ public class PMovement : MonoBehaviour
             anim.SetBool("isIdle", true);
         }
 
-        if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S) == true)
+        if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
         {
-            rbody.velocity = playerTransform.forward * -speed * Time.deltaTime;
+            rbody.velocity = playerTransform.forward * speed * Time.deltaTime;
             anim.SetBool("isWalking", true);
             anim.SetBool("isIdle", false);
         }
@@ -63,12 +63,12 @@ public class PMovement : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
-            transform.Rotate(0, -7, 0 * turnspeed * Time.deltaTime);
+            transform.Rotate(0, -10, 0 * turnspeed * Time.deltaTime);
         }
 
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
-            transform.Rotate(0, 7, 0 * turnspeed * Time.deltaTime);
+            transform.Rotate(0, 10, 0 * turnspeed * Time.deltaTime);
         }
     }
 }
