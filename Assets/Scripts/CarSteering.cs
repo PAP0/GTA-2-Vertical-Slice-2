@@ -17,7 +17,7 @@ public class CarSteering : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    void FixedUpdate()
+    void Update()
     {
         steeringAmount = - Input.GetAxis("Horizontal");
         speed = Input.GetAxis("Vertical");

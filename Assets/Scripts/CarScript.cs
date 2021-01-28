@@ -25,11 +25,12 @@ public class CarScript : MonoBehaviour
         Turn();
         Drive();
         Switch();
+        Vector3 playerPos = playerTransform.eulerAngles;
     }
     // Update is called once per frame
     void FixedUpdate()
     {
-        Vector3 playerPos = playerTransform.eulerAngles;
+
     }
 
     void Drive()
