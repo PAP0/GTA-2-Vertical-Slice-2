@@ -15,11 +15,6 @@ public class Shooting : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftControl))
         {
             Shoot();
-            anim.SetBool("isWalking", true);
-        }
-        if (Input.GetKeyUp(KeyCode.LeftControl))
-        {
-            anim.SetBool("isWalking", false);
         }
     }
 
