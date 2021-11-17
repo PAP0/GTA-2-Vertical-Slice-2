@@ -12,7 +12,6 @@ public class CarScript : MonoBehaviour
     private Transform playerTransform;
     public GameObject TheCar;
 
-    // Use this for initialization
     void Start()
     {
         rbody = GetComponent<Rigidbody>();
@@ -27,23 +26,15 @@ public class CarScript : MonoBehaviour
         Switch();
         Vector3 playerPos = playerTransform.eulerAngles;
     }
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-
-    }
 
     void Drive()
     {
         if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
         {
-            //transform.position += transform.forward * Time.deltaTime * speed;
             rbody.velocity = playerTransform.forward * speed * Time.deltaTime;
         }
         if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
         {
-
-            //transform.position += transform.forward * Time.deltaTime * -speed;
             rbody.velocity = playerTransform.forward * -speed * Time.deltaTime;
         }
     }
